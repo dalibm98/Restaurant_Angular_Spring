@@ -1,0 +1,19 @@
+<div class="row plat-details" *ngIf="platData">
+<div class="col-sm-6">
+    <img class="palt-img" src="{{imgPath + platData.imageUrl}}" alt="">
+</div>
+<div class="col-sm-6">
+   <div class="details">
+            <h1>{{platData.nom}}</h1>
+            <h3>prix : {{platData.prix}}</h3>
+            <button class="form-button">commander</button>
+            <button *ngIf="removePanier" class="form-button" (click)="removeFromPanier(platData.id)">supprimer du panier</button>
+            <button *ngIf="!removePanier" class="form-button" (click)="addToPanier()">ajouter au panier</button>
+            <div class="quantity-group">
+                <button (click)="handleQuantity('plus')">+</button>
+                <input type="text" value={{productQuantity}}>
+                <button (click)="handleQuantity('min')">-</button>
+            </div>
+   </div>
+</div>
+</div>

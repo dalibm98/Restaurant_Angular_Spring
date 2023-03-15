@@ -1,0 +1,22 @@
+<div class="plats-list">
+    <h1>Mes commandes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>date du commande</th>
+                <th>Prix Total</th>
+                <th>voir details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of commandesData">
+                
+                <td>{{item.dateCommande}}</td>
+                <td>{{item.prixTotal}}</td>
+                <td>
+                  <a class="adjust-update-link" routerLink="/LigneCommande/{{item.id}}"><fa-icon [icon]="iconUpdate"></fa-icon> </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

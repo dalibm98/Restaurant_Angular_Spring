@@ -1,0 +1,12 @@
+<div class="update-plats">
+    <h1>mettre à jour utilisateur</h1>
+    <p class="message-p">{{message}}</p>
+    <form #addUsers="ngForm" class="common-form" (ngSubmit)="submit(addUsers.value)">
+        <input class="form-input" type="text" name="username" ngModel="{{userData?.username}}">
+        <select name="role" ngModel>
+            <option value=0  selected>utilisateur normale</option>
+            <option value=1 >admin</option>
+        </select>
+        <button class="form-button">modifier</button>  
+    </form>
+</div>

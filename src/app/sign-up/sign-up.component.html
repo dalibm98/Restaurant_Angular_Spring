@@ -1,0 +1,11 @@
+<div class="user-auth">
+    <div class="sign-up">
+        <h1>Creer un compte</h1>
+        <form #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)" class="common-form">
+            <input class="form-input" type="text" placeholder="entrer votre username" name="username" ngModel>
+            <input class="form-input" type="password" placeholder="entrer votre mot de passe" name="password" ngModel>
+            <button class="form-button">Creer Compte</button>
+            <a routerLink="/user-auth">vous avez deja un compte ? connecter vous </a>
+        </form>
+    </div>
+</div>

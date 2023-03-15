@@ -1,0 +1,29 @@
+<nav class="nav">
+  <h1> <a routerLink="">Restaurant 4INGA</a> </h1>
+  <div [ngSwitch]="menuType">
+  <ul *ngSwitchCase="'default'">
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLink="/commandePage">panier({{panierItems}})</a></li>
+    <li id="leftSide"><a routerLink="user-auth">Login</a></li>
+  </ul>
+
+  <ul *ngSwitchCase="'user'">
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLink="/mesCommandes">Mes Commandes</a></li>
+    <li><a routerLink="/commandePage">panier({{panierItems}})</a></li>
+    <div id="leftSide">
+      <li ><a (click)="logout()">Logout</a> <label style="color: blueviolet;"> {{username | titlecase}}</label></li>
+    </div>
+    
+  </ul>
+  <ul *ngSwitchCase="'admin'">
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLink="/plats">plats</a></li>
+    <li><a href="/users">utilisateurs</a></li>
+    <div id="leftSide">
+      <li ><a (click)="logout()">Logout</a> <label style="color: blueviolet;"> {{username | titlecase}}</label></li>
+    </div>
+    
+  </ul>
+</div>
+</nav>

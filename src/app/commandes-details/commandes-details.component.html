@@ -1,0 +1,21 @@
+<div class="products-list">
+    <h1>Mes commandes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>image</th>
+                <th>Nom du Plat</th>
+                <th>prix unitaire</th>
+                <th>quantite<th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of plats">
+               <td><img src="{{imgPath + item.imageUrl}}" alt=""></td> 
+                <td>{{item.nom}}</td>
+                <td>{{item.prix}}</td>
+                <td>{{item.quantite}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

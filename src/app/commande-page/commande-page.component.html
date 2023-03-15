@@ -1,0 +1,36 @@
+<div *ngIf="platData" class="cart-page">
+    <h1>
+        Mon panier
+    </h1>
+    <p class="message-p">{{message}}</p>
+    <div class="row">
+    <div class="col-sm-8 details">
+        <ul *ngFor="let item of platData">
+            <li>
+                <img src="{{imgPath + item.imageUrl}}" alt="">
+            </li>
+            <li>
+                <span> Nom Du Plat : {{item.nom}}</span>
+            </li>
+            <li>
+                <span> Prix : {{item.prix}} dt</span>
+            </li>
+            <li>
+                <span> Quantite : {{item.quantite}}</span>
+            </li>
+            <li >
+               <button class="form-button"(click)="removeFromPanier(item.id)" >supprimer du panier</button>
+            </li>
+        </ul>
+        
+    </div>
+    <div class="col-sm-4 summary">
+    <h3>Total</h3>
+    <ul>
+        <li> <span><h4>Total</h4></span>{{PrixTotal}} dt <span><h4></h4></span></li>
+        <button  class="form-button max-width" (click)="commander()" >Checkout</button>
+    </ul>
+    </div>
+    </div>
+    </div>
+    

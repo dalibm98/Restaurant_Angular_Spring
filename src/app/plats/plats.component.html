@@ -1,0 +1,27 @@
+<div class="plats-list">
+    <h1>Les plats</h1>
+    <p class="message-p">{{message}}</p>
+    <a routerLink="/addPlats">ajouter un plat</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Nom du plat</th>
+                <th>Prix</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of platList">
+                
+                <td><img src="{{imgPath + item.imageUrl}}"></td>
+                <td>{{item.nom}}</td>
+                <td>{{item.prix}}</td>
+                <td>
+                    <fa-icon [icon]="iconDelete" (click)="deletePlat(item.id)"></fa-icon>
+                  <a class="adjust-update-link" routerLink="/updatePlat/{{item.id}}"><fa-icon [icon]="iconUpdate"></fa-icon> </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
