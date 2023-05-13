@@ -18,8 +18,8 @@
                 <td>{{item.nom}}</td>
                 <td>{{item.prix}}</td>
                 <td>
-                    <fa-icon [icon]="iconDelete" (click)="deletePlat(item.id)"></fa-icon>
-                  <a class="adjust-update-link" routerLink="/updatePlat/{{item.id}}"><fa-icon [icon]="iconUpdate"></fa-icon> </a>
+                    <fa-icon [icon]="iconDelete" (click)="deletePlat(item.plat_id)"></fa-icon>
+                  <a class="adjust-update-link" routerLink="/updatePlat/{{item.plat_id}}"><fa-icon [icon]="iconUpdate"></fa-icon> </a>
                 </td>
             </tr>
         </tbody>

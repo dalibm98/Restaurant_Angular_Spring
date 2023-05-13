@@ -51,15 +51,16 @@ export class CommandePageComponent implements OnInit {
        data.prixTotal = this.PrixTotal
        data.dateCommande = new Date()
        let user = JSON.parse(userData)
-       data.idClient=user.id
+       data.idClient={"user_id":1}
+       console.warn(data)
        this.commande.addCommande(data).subscribe((result)=>{
         const ligneComm = {} as ligneCommande
         let panierData = localStorage.getItem('panier')
             if (panierData){
                    let items = JSON.parse(panierData)
                    items.forEach((element:plat) => {
-                    ligneComm.idCommande=result.id
-                    ligneComm.idPlat=element.id
+                    ligneComm.commande_id=result.commande_id
+                    ligneComm.plat_id=element.plat_id
                     if (element.quantite){
                       ligneComm.quantite = element.quantite
                     }

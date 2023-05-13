@@ -23,7 +23,7 @@ ngOnInit(): void {
 
 submit(data:plat){
   if (this.platData){
-    data.id = this.platData.id
+    data.plat_id = this.platData.plat_id
     data.imageUrl=this.platData.imageUrl
   }
   this.plat.updatePlat(data).subscribe(()=>{

@@ -16,6 +16,7 @@ ngOnInit(): void {
   
 }
   submit(data:plat):void{
+   
     
    this.plat.addPlat(data).subscribe((result)=>{
     if (result){
@@ -24,7 +25,7 @@ ngOnInit(): void {
    })
    setTimeout(() => {
     this.message=undefined
-   }, 3000);
+   }, 3000); 
   }
 
 }

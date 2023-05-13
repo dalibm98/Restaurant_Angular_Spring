@@ -22,7 +22,7 @@ constructor(private activeRoute:ActivatedRoute,private plat:PlatService){}
       let panierData = localStorage.getItem('panier')
       if (plat_id &&  panierData){
         let items = JSON.parse(panierData)
-        items = items.filter((item:plat)=>plat_id===item.id.toString())
+        items = items.filter((item:plat)=>plat_id===item.plat_id.toString())
         if (items.length){
           this.removePanier=true
         }

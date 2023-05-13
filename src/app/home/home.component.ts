@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.plat.popularPlats().subscribe((data)=>{
-      
+      console.warn(data)
       this.popularPlats=data
     })
     this.plat.trendyPlats().subscribe((data)=>{

@@ -11,32 +11,32 @@ export class PlatService {
   constructor(private http:HttpClient, private router:Router) { }
    
   addPlat(data:plat){
-    data.ImageUrl= data.ImageUrl.replace('C:\\fakepath\\','')
-    return this.http.post('https://localhost:7200/api/Plats',data)
+    data.imageUrl= data.imageUrl.replace('C:\\fakepath\\','')
+    return this.http.post('http://localhost:8080/plats',data)
   }
 
   
   platsList(){
-    return this.http.get<plat[]>('https://localhost:7200/api/Plats')
+    return this.http.get<plat[]>('http://localhost:8080/plats/all')
   }
 
   deletePlat(id:number){
-    return this.http.delete(`https://localhost:7200/api/Plats/${id}`)
+    return this.http.delete(`http://localhost:8080/plats/delete/${id}`)
   }
 
   getPlat(id:string){
-    return this.http.get<plat>(`https://localhost:7200/api/Plats/${id}`)
+    return this.http.get<plat>(`http://localhost:8080/plats/${id}`)
   }
 
   updatePlat(plat:plat){
-   return this.http.put<plat>(`https://localhost:7200/api/Plats/${plat.id}`,plat)
+   return this.http.put<plat>(`http://localhost:8080/plats/update/${plat.plat_id}`,plat)
   }
 
   popularPlats(){
-   return this.http.get<plat[]>("https://localhost:7200/api/Plats")
+   return this.http.get<plat[]>("http://localhost:8080/plats/all")
   }
   trendyPlats(){
-    return this.http.get<plat[]>("https://localhost:7200/api/Plats")
+    return this.http.get<plat[]>("http://localhost:8080/plats/all")
   }
   addLocalPanier(data:plat){
     let panierData=[]
@@ -56,7 +56,7 @@ export class PlatService {
     let panierData = localStorage.getItem('panier')
     if (panierData){
       let items:plat[] = JSON.parse(panierData)
-      items = items.filter((item:plat)=>id!==item.id)
+      items = items.filter((item:plat)=>id!==item.plat_id)
       localStorage.setItem('panier',JSON.stringify(items)) 
       this.panierData.emit(items)
 

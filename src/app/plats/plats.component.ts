@@ -34,6 +34,7 @@ export class PlatsComponent implements OnInit {
 
   list(){
     this.plat.platsList().subscribe((result)=>{
+      
       if (result){
         
         this.platList=result

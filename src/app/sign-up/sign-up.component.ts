@@ -12,6 +12,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.user.reloadUser()
+  
   }
 
   signUp(data:signUp):void{

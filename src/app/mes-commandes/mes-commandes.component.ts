@@ -19,7 +19,7 @@ export class MesCommandesComponent implements OnInit {
     let user = localStorage.getItem('user')
     if (user){
       let userData = JSON.parse(user)
-      let userId = userData.id
+      let userId = userData.user_id
       this.commande.getMyCommande(userId).subscribe((result)=>{
           if (result){
             this.commandesData = result

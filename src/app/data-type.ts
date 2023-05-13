@@ -2,7 +2,7 @@ export interface signUp{
     username:string,
     password:string,
     role:number,
-    id : number
+    user_id : number
 }
 
 export interface login{
@@ -15,19 +15,19 @@ export interface plat{
     prix : number,
     ImageUrl :string,
     imageUrl:string,
-    id:number,
+    plat_id:number,
     quantite:undefined|number
 }
 
 export interface Commande{
     dateCommande:Date,
-    idClient:number,
+    idClient:object,
     prixTotal:number,
-    id:number
+    commande_id:number
 }
 
 export interface ligneCommande{
-    idCommande: number,
-    idPlat: number,
+    commande_id: number,
+    plat_id: number,
     quantite: number
 }

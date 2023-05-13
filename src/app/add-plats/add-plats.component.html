@@ -2,9 +2,9 @@
     <h1>ajouter un nouveau plat</h1>
     <p class="message-p">{{message}}</p>
     <form #addPlats="ngForm" class="common-form" (ngSubmit)="submit(addPlats.value)">
-        <input class="form-input" type="text" placeholder="entrer le nom du plat" name="Nom" ngModel>
-        <input class="form-input" type="number" placeholder="entrer le prix du plat" name="Prix" ngModel>
-        <input class="form-input" type="file" name="ImageUrl" ngModel>
+        <input class="form-input" type="text" placeholder="entrer le nom du plat" name="nom" ngModel>
+        <input class="form-input" type="number" placeholder="entrer le prix du plat" name="prix" ngModel>
+        <input class="form-input" type="file" name="imageUrl" ngModel>
         <button class="form-button">enregistrer</button>  
     </form>
 </div>

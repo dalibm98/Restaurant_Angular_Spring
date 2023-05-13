@@ -30,7 +30,7 @@ const routes: Routes = [
   {
     component:PlatsComponent,
     path:'plats',
-    canActivate:[AdminGuard]
+    //canActivate:[AdminGuard]
   },
   {
     component:SignUpComponent,
@@ -44,12 +44,12 @@ const routes: Routes = [
   {
     component:AddPlatsComponent,
     path:'addPlats',
-    canActivate:[AdminGuard]
+    //canActivate:[AdminGuard]
   },
   {
     component:UpdatePlatComponent,
     path:'updatePlat/:id',
-    canActivate:[AdminGuard]
+    //canActivate:[AdminGuard]
     
   },
   {
@@ -71,7 +71,7 @@ const routes: Routes = [
   {
     component:MesCommandesComponent,
     path:'mesCommandes',
-    canActivate:[AuthGuard]
+    //canActivate:[AuthGuard]
   },
   {
     component:CommandesDetailsComponent,
@@ -81,12 +81,12 @@ const routes: Routes = [
   {
     component:UsersComponent,
     path:'users',
-    canActivate:[AdminGuard]
+    //canActivate:[AdminGuard]
   },
   {
     component:UpdateUserComponent,
     path:'updateUser/:id',
-    canActivate:[AdminGuard]
+    //canActivate:[AdminGuard]
   }
 ];
 

@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http:HttpClient, private router:Router) { }
 
   userLogin(data:login){
-    this.http.get(`https://localhost:7200/api/Utilisateurs/GetUtilisateurLogin?username=${data.username}&password=${data.password}`,
+    this.http.get(`http://localhost:8080/login?username=${data.username}&password=${data.password}`,
     {observe:'response'}).subscribe((result:any)=>{
      console.warn(result)
       if (result && result.body && Object.keys(result.body).length===5){
@@ -28,7 +28,7 @@ export class UserService {
 
   userSignUp(data:signUp){
     data.role=0
-    return this.http.post('https://localhost:7200/api/Utilisateurs',data,{observe:'response'}).subscribe((result)=>{
+    return this.http.post('http://localhost:8080/register',data,{observe:'response'}).subscribe((result)=>{
           if (result){
             localStorage.setItem('user',JSON.stringify(result.body))
             this.router.navigate(['/'])
@@ -45,17 +45,17 @@ export class UserService {
   }
 
   getAllUsers(){
-    return this.http.get<signUp[]>('https://localhost:7200/api/Utilisateurs');
+    return this.http.get<signUp[]>('http://localhost:8080/users/all');
   }
   deleteUser(id:number){
-    return this.http.delete(`https://localhost:7200/api/Utilisateurs/${id}`)
+    return this.http.delete(`http://localhost:8080/users/delete/${id}`)
   }
 
   getUser(id:string){
-    return this.http.get<signUp>(`https://localhost:7200/api/Utilisateurs/GetUtilisateur/${id}`)
+    return this.http.get<signUp>(`http://localhost:8080/users/${id}`)
   }
   updateUser(user:signUp){
-    return this.http.put<signUp>(`https://localhost:7200/api/Utilisateurs/${user.id}`,user)
+    return this.http.put<signUp>(`http://localhost:8080/users/update/${user.user_id}`,user)
   }
 
   GetAll(){

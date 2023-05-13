@@ -7,7 +7,7 @@
             <h1>{{platData.nom}}</h1>
             <h3>prix : {{platData.prix}}</h3>
             <button class="form-button">commander</button>
-            <button *ngIf="removePanier" class="form-button" (click)="removeFromPanier(platData.id)">supprimer du panier</button>
+            <button *ngIf="removePanier" class="form-button" (click)="removeFromPanier(platData.plat_id)">supprimer du panier</button>
             <button *ngIf="!removePanier" class="form-button" (click)="addToPanier()">ajouter au panier</button>
             <div class="quantity-group">
                 <button (click)="handleQuantity('plus')">+</button>

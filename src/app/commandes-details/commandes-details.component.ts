@@ -23,7 +23,7 @@ export class CommandesDetailsComponent implements OnInit {
     commandeId && this.ligneCommande.getLignesCommandes(parseInt(commandeId) ).subscribe((data)=>{
       this.ligneCommandes = data
       this.ligneCommandes.forEach((element)=>{
-        this.plat.getPlat(element.idPlat.toString()).subscribe((result)=>{
+        this.plat.getPlat(element.plat_id.toString()).subscribe((result)=>{
           result.quantite=element.quantite
           this.plats?.push(result)
           console.warn(this.plats)

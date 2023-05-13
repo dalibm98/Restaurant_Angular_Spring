@@ -2,8 +2,8 @@
     <h1>mettre à jour le plat</h1>
     <p class="message-p">{{message}}</p>
     <form #addPlats="ngForm" class="common-form" (ngSubmit)="submit(addPlats.value)">
-        <input class="form-input" type="text" name="Nom" ngModel="{{platData?.nom}}">
-        <input class="form-input" type="number" placeholder="entrer le prix du plat" name="Prix" ngModel="{{platData?.prix}}">
+        <input class="form-input" type="text" name="nom" ngModel="{{platData?.nom}}">
+        <input class="form-input" type="number" placeholder="entrer le prix du plat" name="prix" ngModel="{{platData?.prix}}">
         <button class="form-button">modifier</button>  
     </form>
 </div>

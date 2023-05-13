@@ -11,12 +11,12 @@ export class CommandeService {
   constructor(private http:HttpClient, private router:Router) { }
 
   addCommande(data:Commande){
-    return this.http.post<Commande>('https://localhost:7200/api/Commandes',data)
+    return this.http.post<Commande>('http://localhost:8080/commandes',data)
   }
   getLastCommandeInsertedId(){
-    return this.http.get('https://localhost:7200/api/Commandes/LastId')
+    return this.http.get('http://localhost:8080/commandes/LastId')
   }
   getMyCommande(userId:number){
-    return this.http.get<Commande[]>(`https://localhost:7200/api/Commandes/mesCommandes?userID=${userId}`)
+    return this.http.get<Commande[]>(`http://localhost:8080/commandes/mesCommandes/${userId}`)
   }
 }

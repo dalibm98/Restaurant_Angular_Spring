@@ -22,7 +22,7 @@ export class UpdateUserComponent implements OnInit {
   submit(data:signUp){
    
     if (this.userData){
-      data.id=this.userData.id
+      data.user_id=this.userData.user_id
       data.password= this.userData.password
       if (!data.role){
         data.role = this.userData.role
