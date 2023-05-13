@@ -19,13 +19,16 @@ export interface plat{
     quantite:undefined|number
 }
 
-export interface Commande{
-    dateCommande:Date,
-    idClient:object,
-    prixTotal:number,
-    commande_id:number
-}
+export interface Commande {
+    dateCommande: Date,
+    user_id: number,
+    prixTotal: number,
+    commande_id: number
+    
+  }
 
+
+  
 export interface ligneCommande{
     commande_id: number,
     plat_id: number,

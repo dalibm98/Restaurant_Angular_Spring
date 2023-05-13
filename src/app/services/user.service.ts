@@ -26,6 +26,23 @@ export class UserService {
     })
   }
 
+  login(data:login){
+    this.http.get(`http://localhost:8080/login?username=${data.username}&password=${data.password}`,
+    {observe:'response'}).subscribe((result:any)=>{
+     console.warn(result)
+      if (result && result.body && Object.keys(result.body).length===5){
+             localStorage.setItem('user',JSON.stringify(result.body))
+            this.router.navigate(['/'])
+  }
+  else {
+    console.warn('login failed')
+  } 
+  
+    })
+  }
+
+
+
   userSignUp(data:signUp){
     data.role=0
     return this.http.post('http://localhost:8080/register',data,{observe:'response'}).subscribe((result)=>{
