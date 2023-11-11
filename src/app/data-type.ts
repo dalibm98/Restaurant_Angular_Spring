@@ -21,16 +21,22 @@ export interface plat{
 
 export interface Commande {
     dateCommande: Date,
-    user_id: number,
+    user: User;
     prixTotal: number,
     commande_id: number
     
   }
+export interface User {
 
+    user_id :number
+}
 
   
-export interface ligneCommande{
-    commande_id: number,
-    plat_id: number,
-    quantite: number
-}
+export interface ligneCommande {
+    id: number;
+    commande: Commande;
+    plat: plat;
+    quantite: number;
+    commande_id: number; // Updated property name
+    plat_id: number;
+    }

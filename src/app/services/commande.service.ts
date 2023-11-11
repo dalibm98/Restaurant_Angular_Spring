@@ -11,7 +11,7 @@ export class CommandeService {
   constructor(private http:HttpClient, private router:Router) { }
 
   addCommande(data:Commande){
-    return this.http.post<Commande>('http://localhost:8080/commandes',data)
+    return this.http.post<Commande>('http://localhost:8080/commandes/add',data)
   }
   getLastCommandeInsertedId(){
     return this.http.get('http://localhost:8080/commandes/LastId')

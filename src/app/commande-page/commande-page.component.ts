@@ -52,9 +52,7 @@ export class CommandePageComponent implements OnInit {
       data.prixTotal = this.PrixTotal;
       data.dateCommande = new Date();
       let user = JSON.parse(userData);
-      data.user_id = user.user_id;
-
-
+     data.user = {user_id: user.user_id};
       console.warn(data);
       this.commande.addCommande(data).subscribe((result) => {
         const ligneComm = {} as ligneCommande;
